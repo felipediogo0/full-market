@@ -7,7 +7,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Tela de Login do Bootstrap</title>
 </head>
-<body>
-    
+<body class="d-flex justify-content-center align-items-center vh-100" data-bs-theme="light">
+    <form class="text-center">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" class="mb-2" height="57" width="72"/>
+        <h1 class="h3 fw-bold">Please Sign in</h1>
+        <div class="form-floating mb-1">
+            <input type="email" class="form-control" id="floatingInput" placeholder="TypeyourEmail@email.com"/>
+            <label for="floatingInput">Typeyour@email.com</label>
+        </div> 
+        <div class="form-floating mb-1">
+            <input type="password" class="form-control" id="floatingInput" placeholder="Type Your Password &#129323"/>
+            <label for="floatingInput">Type your Password &#129323</label>
+        </div>
+        <div class="form-check mb-2 d-flex">
+            <input type="checkbox" class="form-check-input" id="flexCheckDefault"/>
+            <label class="form-check-label small ms-1" for="flexCheckDefault">Remember login</label>
+        </div>
+        <button class="btn btn-warning">Sign in</button>
+        <button type="button" class="btn btn-primary" id="darkModeToggle">Dark/Light</button>
+    </form>
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle')
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-bs-theme')
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+            document.body.setAttribute('data-bs-theme', newTheme)
+        })
+    </script>
 </body>
 </html>
